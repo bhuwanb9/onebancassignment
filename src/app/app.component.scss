@@ -1,0 +1,136 @@
+@import '../scss/mixin';
+.historyWrapper {
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+    background: #ffffff;
+    top: -20px;
+    padding-bottom: 20px;
+    .user-wrapper {
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        padding-bottom: 10px;
+        background: #ffffff;
+        z-index: 99;
+        .user-header {
+            @include flexAlignCenter;
+            padding: 10px 16px;
+            box-shadow: 0 0 8px #999999;
+            img {
+                width: 20px;
+            }
+            .user-name {
+                font-size: 16px;
+            }
+            .avtar {
+                width: 40px;
+                height: 40px;
+                background: #e3f1d5;
+                border-radius: 50%;
+                line-height: 40px;
+                text-align: center;
+                font-size: 24px;
+                margin: 0 16px;
+            }
+        }
+    }
+    .dateGroup {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            border-top: 2px solid #eaeaea;
+            top: 32px;
+        }
+        .date-header {
+            align-self: center;
+            padding: 4px 12px;
+            z-index: 9;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .item {
+            margin: 16px;
+            width: 300px;
+            &.right {
+                align-self: flex-end;
+            }
+            &.left {
+                align-self: flex-start;
+            }
+            .box {
+                padding: 16px;
+                border: 1px solid #cccccc;
+                border-radius: 10px;
+                .amount-wrapper {
+                    @include flexAlignCenterJustifyBetween;
+                    margin-bottom: 16px;
+                    .amount {
+                        font-weight: bold;
+                        font-size: 16px;
+                        span {
+                            font-size: 30px;
+                            vertical-align: middle;
+                            font-weight: normal;
+                        }
+                    }
+                    .description {
+                        span {
+                            font-size: 12px;
+                            @include flexAlignCenter;
+                            img {
+                                width: 14px;
+                                margin-right: 4px;
+                            }
+                        }
+                    }
+                }
+                .bottom {
+                    @include flexAlignCenterJustifyBetween;
+                    .trans-id {
+                        font-size: 12px;
+                        color: gray;
+                    }
+                    .btn-wrapper button {
+                        padding: 8px 18px;
+                        background: #ffffff;
+                        border: 1px solid #cccccc;
+                        border-radius: 20px;
+                        margin-right: 10px;
+                        cursor: pointer;
+                        &.btn-primary {
+                            background: #3467ff;
+                            border-color: #3467ff;
+                            color: #ffffff;
+                            font-weight: 600;
+                        }
+                    }
+                    button.btn-detail {
+                        border: 0;
+                        background: none;
+                        padding: 0;
+                        cursor: pointer;
+                        width: 30px;
+                        text-align: right;
+                        opacity: .8;
+                        img {
+                            width: 14px;
+                        }
+                    }
+                }
+            }
+            .date-time {
+                font-size: 12px;
+                text-align: right;
+                margin: 4px 0 0 0;
+                color: gray;
+            }
+        }
+    }
+}
